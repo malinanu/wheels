@@ -1,0 +1,20 @@
+{
+  "general": {
+    "brand_name": "AGNI Forged Wheels",
+    "disclaimer": "Visual preview only. Final fitment subject to verification by AGNI Engineering before forging."
+  },
+  "ai_garage": {
+    "title": "AI Garage Visualiser",
+    "upload_cta": "Upload Photo of Your Car",
+    "compare_oem": "Factory OEM Setup",
+    "compare_agni": "AGNI Forged Setup",
+    "fitment_verified": "Verified Fitment Guaranteed",
+    "fitment_unverified": "Engineering Review Required"
+  },
+  "cart": {
+    "title": "Factory Production Queue",
+    "checkout_cta": "Proceed to Secure Checkout",
+    "free_freight": "Complimentary Global Express Air Freight Included"
+  }
+}
+

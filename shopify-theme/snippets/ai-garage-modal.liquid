@@ -1,0 +1,256 @@
+<div id="AgniAiGarageModal" class="ai-garage-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="aiGarageTitle">
+  <div class="ai-garage-modal-container">
+    <!-- Modal Studio Header -->
+    <div class="ai-garage-modal-header">
+      <h3 id="aiGarageTitle">
+        <svg class="brand-logo-mark-svg" width="22" height="22" viewBox="0 0 32 32" fill="none">
+          <path d="M16 3L30 27H22L16 16.5L10 27H2L16 3Z" fill="url(#garage-apex-grad-liquid)"/>
+          <path d="M16 11L21 21H11L16 11Z" fill="#0A0A0C"/>
+          <path d="M16 14L18.5 19H13.5L16 14Z" fill="var(--color-accent)"/>
+          <defs>
+            <linearGradient id="garage-apex-grad-liquid" x1="16" y1="3" x2="16" y2="27" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF6B26"/>
+              <stop offset="1" stop-color="#D93800"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>AI GARAGE &bull; 1:1 RAY-TRACED VISUALISER</span>
+      </h3>
+
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <button class="btn-close-modal" aria-label="Close Visualiser">&times;</button>
+      </div>
+    </div>
+
+    <!-- Modal Studio Body -->
+    <div class="ai-garage-modal-body">
+      <!-- Left: Interactive Canvas Studio -->
+      <div class="garage-canvas-area">
+        <!-- Re-rendering Feedback Overlay -->
+        <div class="rendering-feedback-overlay" style="position: absolute; inset: 0; background: rgba(8, 8, 12, 0.82); backdrop-filter: blur(10px); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 50; opacity: 0; pointer-events: none; transition: opacity 0.2s ease;">
+          <div style="width: 36px; height: 36px; border: 3px solid rgba(255, 77, 0, 0.2); border-top-color: var(--color-accent); border-radius: 50%; animation: spin 0.8s linear infinite;"></div>
+          <div style="font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em; color: var(--color-accent); margin-top: 1rem; font-weight: 700;">
+            COMPUTING WHEEL POSE &amp; CALIPER OCCLUSION...
+          </div>
+        </div>
+
+        <!-- Top Canvas HUD -->
+        <div class="garage-canvas-hud">
+          <div class="garage-hud-pill">
+            <span class="telemetry-pulse"></span>
+            <span>RAY-TRACED OCCLUSION &bull; 45&deg; POSE</span>
+          </div>
+
+          <div class="garage-hud-actions">
+            <button class="garage-action-btn" onclick="alert('High-resolution 4K render downloaded (3840x2160 PNG with CAD spec overlay).');">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span>4K RENDER</span>
+            </button>
+            <button class="garage-action-btn" onclick="navigator.clipboard.writeText(window.location.href); alert('Visualisation configuration copied to clipboard!');">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+              <span>SHARE</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Split Slider Stage -->
+        <div class="garage-preview-active" style="width: 100%;">
+          <div class="split-slider-container" style="border-radius: var(--radius-sm) var(--radius-sm) 0 0; border: 1px solid rgba(255, 255, 255, 0.08); aspect-ratio: 16 / 9; max-height: 480px;">
+            <div class="split-layer before">
+              <img src="{{ 'ferrari-812-before.jpg' | asset_url }}" alt="Ferrari 812 GTS OEM Factory Setup with Bronze Wheels" />
+            </div>
+
+            <div class="split-layer after">
+              <img src="{{ 'ferrari-812-after.jpg' | asset_url }}" alt="Ferrari 812 GTS with AGNI AF-03 Forged Wheels (AI Render)" />
+            </div>
+
+            <div class="split-divider">
+              <div class="split-handle">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left: -6px;">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </div>
+            </div>
+
+            <div class="split-badge badge-left">FACTORY OEM SPEC &bull; BRONZE</div>
+            <div class="split-badge badge-right">AGNI AF-03 &bull; FERRARI SPEC BRONZE (AI GARAGE)</div>
+          </div>
+
+          <!-- Quick Comparison Bar -->
+          <div class="garage-slider-controls">
+            <button class="filter-pill" data-action="garage-split" data-val="100">VIEW OEM (100%)</button>
+            <button class="filter-pill active" data-action="garage-split" data-val="50">SPLIT COMPARE (50%)</button>
+            <button class="filter-pill" data-action="garage-split" data-val="0">VIEW AGNI FORGED (100%)</button>
+          </div>
+        </div>
+
+        <!-- Car Photo Upload Action Strip -->
+        <div class="garage-upload-strip">
+          <div class="garage-upload-tip">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <polyline points="21 15 16 10 5 21"></polyline>
+            </svg>
+            <div>
+              <div style="font-family: var(--font-display); font-size: 0.82rem; font-weight: 700; color: #fff;">
+                UPLOAD YOUR OWN CAR
+              </div>
+              <div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--color-text-secondary);">
+                Drop any 3/4 angle photo to automatically match focal length and brake caliper clearance.
+              </div>
+            </div>
+          </div>
+
+          <button class="btn-primary" onclick="document.getElementById('garage-file-upload').click()" style="padding: 0.45rem 0.95rem; font-size: 0.72rem; flex-shrink: 0;">
+            <span>SELECT PHOTO</span>
+          </button>
+          <input type="file" id="garage-file-upload" accept="image/*" style="display: none;" />
+        </div>
+      </div>
+
+      <!-- Right: Control & Telemetry Console -->
+      <div class="garage-controls-area">
+        <!-- Active Platform Specification -->
+        <div class="garage-fitment-status-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <span class="control-label" style="margin: 0;">ACTIVE PLATFORM SPECIFICATION</span>
+            <span class="badge-verified garage-fitment-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>VERIFIED FITMENT</span>
+            </span>
+          </div>
+
+          <div class="garage-vehicle-name" style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; color: #ffffff;">
+            Ferrari 812 GTS / Superfast (2024)
+          </div>
+          <div class="garage-vehicle-specs">
+            Front: 21x10.0J ET44 | Rear: 22x12.5J ET38 (398mm CCM-R Cleared)
+          </div>
+
+          <!-- Vehicle Presets Dock -->
+          <div style="margin-top: 0.95rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <button class="filter-pill demo-car-preset active" data-make="Ferrari" data-model="812 GTS / Superfast" data-year="2024" data-trim="812 GTS 6.5L V12 Spider">
+              Ferrari 812 GTS
+            </button>
+            <button class="filter-pill demo-car-preset" data-make="Porsche" data-model="911 GT3 (992)" data-year="2024" data-trim="GT3 Standard / Touring (Centerlock)">
+              Porsche 992 GT3
+            </button>
+            <button class="filter-pill demo-car-preset" data-make="BMW" data-model="M4 / M3 (G80/G82)" data-year="2024" data-trim="Competition xDrive">
+              BMW M4 G82
+            </button>
+            <button class="filter-pill demo-car-preset" data-make="Audi" data-model="RS6 Avant (C8)" data-year="2024" data-trim="RS6 Performance 4.0T">
+              Audi RS6 C8
+            </button>
+          </div>
+        </div>
+
+        <!-- Active Wheel Details Card -->
+        <div class="garage-active-wheel-card">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="control-label" style="margin: 0;">SELECTED DESIGN</span>
+            <span class="badge-orange garage-active-wheel-badge" style="font-size: 0.75rem; font-weight: 800; padding: 0.3rem 0.65rem;">2-PIECE MODULAR</span>
+          </div>
+          <div class="garage-active-wheel-title" style="font-family: var(--font-display); font-size: 1.2rem; font-weight: 800; color: #ffffff;">
+            AGNI AF-03 MULTI-SPOKE EXOTIC
+          </div>
+          <div class="garage-active-wheel-specs">
+            9.9 kg (20") &bull; 19" – 22" &bull; 398mm CCM-R Carbon Ceramic Cleared
+          </div>
+        </div>
+
+        <!-- Wheel Thumbnail Matrix (10 Core RVRN Designs) -->
+        <div>
+          <span class="control-label">SELECT FORGED DESIGN (AF-01 TO AF-10)</span>
+          <div class="wheel-selection-strip">
+            <button class="wheel-thumb-btn" data-wheel="AF-01" title="AF-01 Concave Monoblock">
+              <img src="https://cdn.shopify.com/s/files/1/0571/2353/7032/files/rvrn-rv-dc35-5spoke-concave-c8-corvette-black-rims-wheel.png?v=1783321593" alt="AF-01" loading="lazy" />
+              <span>AF-01</span>
+            </button>
+            <button class="wheel-thumb-btn" data-wheel="AF-02" title="AF-02 Directional GT">
+              <img src="https://cdn.shopify.com/s/files/1/0571/2353/7032/files/rvrn-rv-dc24-forged-y-spoke-aston-martin-red-black-wheel.jpg?v=1776231943" alt="AF-02" loading="lazy" />
+              <span>AF-02</span>
+            </button>
+            <button class="wheel-thumb-btn is-active" data-wheel="AF-03" title="AF-03 Multi-Spoke Exotic">
+              <img src="https://cdn.shopify.com/s/files/1/0571/2353/7032/files/rvrn-rv-db082-forged-multi-spoke-ferrari-bronze-wheel.png?v=1776407074" alt="AF-03" loading="lazy" />
+              <span>AF-03</span>
+            </button>
+            <button class="wheel-thumb-btn" data-wheel="AF-04" title="AF-04 Carbon Flash">
+              <img src="https://cdn.shopify.com/s/files/1/0571/2353/7032/files/rvrn-rv-ds016-forged-carbon-flash-corvette-red-black-wheel.jpg?v=1779683353" alt="AF-04" loading="lazy" />
+              <span>AF-04</span>
+            </button>
+            <button class="wheel-thumb-btn" data-wheel="AF-05" title="AF-05 Deep Dish Step-Lip">
+              <img src="https://cdn.shopify.com/s/files/1/0571/2353/7032/files/rvrn-rv-dr08d-forged-deep-dish-mustang-gold-black-wheel.jpg?v=1776333853" alt="AF-05" loading="lazy" />
+              <span>AF-05</span>
+            </button>
+            <button class="wheel-thumb-btn" data-wheel="AF-06" title="AF-06 Carbon Three-Piece">
+              <img src="https://cdn.shopify.com/s/files/1/0571/2353/7032/files/rvrn-rv-t081-forged-carbon-fiber-deep-dish-corvette-yellow-black-wheel.png?v=1779971539" alt="AF-06" loading="lazy" />
+              <span>AF-06</span>
+            </button>
+            <button class="wheel-thumb-btn" data-wheel="AF-07" title="AF-07 Split 5 Staggered">
+              <img src="https://cdn.shopify.com/s/files/1/0571/2353/7032/files/rvrn-rv-dc25-forged-5-spoke-corvette-yellow-black-wheel.png?v=1781683030" alt="AF-07" loading="lazy" />
+              <span>AF-07</span>
+            </button>
+            <button class="wheel-thumb-btn" data-wheel="AF-08" title="AF-08 Carbon Monoblock">
+              <img src="https://cdn.shopify.com/s/files/1/0571/2353/7032/files/rvrn-rv-mc35-forged-carbon-fiber-bmw-black-carbon-fiber-wheel.jpg?v=1781154109" alt="AF-08" loading="lazy" />
+              <span>AF-08</span>
+            </button>
+            <button class="wheel-thumb-btn" data-wheel="AF-09" title="AF-09 Concave Polished">
+              <img src="https://cdn.shopify.com/s/files/1/0571/2353/7032/files/rvrn-rv-mf14-forged-5-spoke-concave-corvette-polished-black-wheel.png?v=1782205938" alt="AF-09" loading="lazy" />
+              <span>AF-09</span>
+            </button>
+            <button class="wheel-thumb-btn" data-wheel="AF-10" title="AF-10 Chrome Mesh GT">
+              <img src="https://cdn.shopify.com/s/files/1/0571/2353/7032/files/rvrn-rv-ms808-chrome-transparent-wheel.png?v=1776215386" alt="AF-10" loading="lazy" />
+              <span>AF-10</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Hand-Applied Finish Selector -->
+        <div>
+          <span class="control-label garage-active-finish-label"><span>FINISH:</span> <strong style="color: #ffffff; margin-left: 0.25rem;">FERRARI SPEC BRONZE</strong></span>
+          <div class="finish-selection-row">
+            <button class="finish-swatch-btn swatch-molten-gold is-active" data-finish="Ferrari Spec Bronze" title="Ferrari Spec Bronze"></button>
+            <button class="finish-swatch-btn swatch-satin-charcoal" data-finish="Satin Charcoal" title="Satin Charcoal"></button>
+            <button class="finish-swatch-btn swatch-liquid-titanium" data-finish="Liquid Titanium" title="Liquid Titanium"></button>
+            <button class="finish-swatch-btn swatch-gloss-black" data-finish="Piano Gloss Black" title="Piano Gloss Black"></button>
+            <button class="finish-swatch-btn swatch-brushed-clear" data-finish="Mirror Brushed Clear" title="Mirror Brushed Clear"></button>
+          </div>
+        </div>
+
+        <!-- Dispatch & Add to Production Queue -->
+        <div class="garage-dispatch-box">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.65rem;">
+            <div style="font-family: var(--font-mono); font-size: 0.85rem; color: #CBD5E1; font-weight: 700; letter-spacing: 0.04em;">
+              4-CORNER BESPOKE SET:
+            </div>
+            <div class="garage-set-price" style="font-family: var(--font-display); font-size: 1.6rem; font-weight: 900; color: #ffffff;">
+              $4,396
+            </div>
+          </div>
+
+          <div class="garage-guarantee-strip">
+            <span>&check; 100% VERIFIED FITMENT</span>
+            <span style="opacity: 0.4;">&bull;</span>
+            <span>FREE GLOBAL AIR FREIGHT</span>
+            <span style="opacity: 0.4;">&bull;</span>
+            <span>5-YEAR STRUCTURAL WARRANTY</span>
+          </div>
+
+          <button class="btn-primary btn-garage-add-to-cart" style="width: 100%; padding: 1.05rem; font-size: 0.92rem; font-weight: 800; letter-spacing: 0.05em;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>ADD TO PRODUCTION QUEUE &mdash; $4,396</span>
+          </button>
+
+          <p class="garage-disclaimer">
+            Visual preview only. Final CNC fitment validated against chassis CAD by AGNI Engineering before billet forging.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,64 @@
+<header class="site-header" id="master-site-header">
+  <div class="container">
+    <div class="site-header-inner">
+      <!-- Bespoke Forged Marque -->
+      <a href="/" class="brand-logo" aria-label="AGNI Forged Wheels">
+        <svg class="brand-logo-mark-svg" width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 3L30 27H22L16 16.5L10 27H2L16 3Z" fill="url(#agni-apex-grad)"/>
+          <path d="M16 11L21 21H11L16 11Z" fill="#0A0A0C"/>
+          <path d="M16 14L18.5 19H13.5L16 14Z" fill="var(--color-accent)"/>
+          <defs>
+            <linearGradient id="agni-apex-grad" x1="16" y1="3" x2="16" y2="27" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF6B26"/>
+              <stop offset="1" stop-color="#D93800"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="brand-logo-text">
+          <span class="brand-name">AGNI</span>
+          <span class="brand-sub">FORGED</span>
+        </div>
+      </a>
+
+      <!-- 4 Essential Pillars Navigation -->
+      <nav class="site-nav" aria-label="Main Navigation">
+        <a href="#collection">WHEEL ARCHIVE</a>
+        <a href="#ai-garage" class="nav-pill-ai-garage" data-action="open-ai-garage">
+          <span class="spark-dot"></span>
+          <span>AI GARAGE</span>
+        </a>
+        <a href="#fitment">FITMENT FINDER</a>
+        <a href="#engineering">METALLURGY</a>
+        <a href="#gallery">BUILDS</a>
+      </nav>
+
+      <!-- Right Telemetry & Queue Actions -->
+      <div class="header-actions">
+        <button class="chassis-telemetry-chip" data-action="open-fitment-finder" title="Click to inspect or change target vehicle fitment">
+          <span class="telemetry-pulse"></span>
+          <span class="telemetry-label">CHASSIS:</span>
+          <span class="header-vehicle-label">PORSCHE 992 GT3</span>
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+
+        <button class="build-queue-btn" data-action="open-cart" aria-label="View Production Build Queue">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M12 3v18M3 12h18"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+          <span>BUILD QUEUE</span>
+          <span class="cart-count-badge">1</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": []
+}
+{% endschema %}
+

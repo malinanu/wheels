@@ -1,0 +1,41 @@
+name: Deploy AGNI Wheels to CloudPanel
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy to CloudPanel Server
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup SSH Key
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.CLOUDPANEL_SSH_KEY }}
+
+      - name: Add Server to Known Hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -p ${{ secrets.CLOUDPANEL_PORT || '22' }} -H "${{ secrets.CLOUDPANEL_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Deploy files with Rsync
+        run: |
+          rsync -avz --delete \
+            -e "ssh -p ${{ secrets.CLOUDPANEL_PORT || '22' }} -o StrictHostKeyChecking=accept-new" \
+            --exclude '.git*' \
+            --exclude '.github' \
+            --exclude 'skills' \
+            --exclude '.gemini' \
+            --exclude '*.md' \
+            ./ ${{ secrets.CLOUDPANEL_USER }}@${{ secrets.CLOUDPANEL_HOST }}:${{ secrets.CLOUDPANEL_TARGET_DIR }}/
+
+      - name: Deployment Health Check
+        run: |
+          echo "Deployment to CloudPanel (${{ secrets.CLOUDPANEL_HOST }}) completed successfully!"

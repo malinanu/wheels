@@ -1,0 +1,23 @@
+{
+  "name": "Product",
+  "sections": {
+    "main_product": {
+      "type": "main-product",
+      "settings": {}
+    },
+    "engineering": {
+      "type": "engineering-specs",
+      "settings": {}
+    },
+    "gallery": {
+      "type": "track-gallery",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main_product",
+    "engineering",
+    "gallery"
+  ]
+}
+

@@ -1,0 +1,45 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "AGNI Forged Luxury OS 2.0",
+    "theme_version": "1.0.0",
+    "theme_author": "AGNI Engineering",
+    "theme_documentation_url": "https://agniforged.com/docs",
+    "theme_support_url": "https://agniforged.com/support"
+  },
+  {
+    "name": "Colors & Finish",
+    "settings": [
+      {
+        "type": "color",
+        "id": "accent_color",
+        "label": "Molten Orange Accent",
+        "default": "#FF4D00"
+      },
+      {
+        "type": "color",
+        "id": "dark_ground",
+        "label": "Dark Lacquer Surface",
+        "default": "#0A0A0C"
+      }
+    ]
+  },
+  {
+    "name": "AI Garage Settings",
+    "settings": [
+      {
+        "type": "text",
+        "id": "ai_garage_api_endpoint",
+        "label": "AI Garage Inference API Endpoint",
+        "default": "https://api.agniforged.com/v1/visualize"
+      },
+      {
+        "type": "checkbox",
+        "id": "require_fitment_confirmation",
+        "label": "Require Verified Fitment Before Checkout",
+        "default": true
+      }
+    ]
+  }
+]
+

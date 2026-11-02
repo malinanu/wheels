@@ -1,0 +1,38 @@
+<div id="AgniCartBackdrop" class="cart-drawer-backdrop" aria-hidden="true"></div>
+
+<aside id="AgniCartDrawer" class="cart-drawer" role="dialog" aria-modal="true" aria-label="Factory Production Queue">
+  <div class="cart-drawer-header">
+    <div style="display: flex; align-items: center; gap: 0.6rem;">
+      <span class="brand-logo-mark" style="width: 14px; height: 14px;"></span>
+      <h3 style="font-family: var(--font-display); font-size: 1.1rem; font-weight: 800; letter-spacing: 0.05em; color: #fff;">
+        FACTORY BUILD QUEUE
+      </h3>
+    </div>
+    <button class="btn-close-cart" style="color: var(--color-text-secondary); font-size: 1.25rem;">✕</button>
+  </div>
+
+  <div class="cart-drawer-items">
+    <!-- Populated dynamically by cart-drawer.js -->
+  </div>
+
+  <div class="cart-drawer-footer">
+    <div class="cart-subtotal-row">
+      <span style="color: var(--color-text-secondary);">ESTIMATED TOTAL:</span>
+      <span class="cart-subtotal-val" style="font-weight: 800; color: #fff;">$4,600</span>
+    </div>
+
+    <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--color-accent); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.4rem;">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      <span>COMPLIMENTARY GLOBAL EXPRESS AIR FREIGHT INCLUDED</span>
+    </div>
+
+    <button class="btn-primary" onclick="alert('Redirecting to Shopify Hosted Checkout with vehicle attributes preserved...')" style="width: 100%;">
+      PROCEED TO SECURE CHECKOUT
+    </button>
+
+    <div style="text-align: center; margin-top: 0.75rem; font-family: var(--font-mono); font-size: 0.65rem; color: var(--color-text-muted);">
+      5-YEAR STRUCTURAL FORGING WARRANTY • PRE-PRODUCTION CAD SIGN-OFF
+    </div>
+  </div>
+</aside>
+

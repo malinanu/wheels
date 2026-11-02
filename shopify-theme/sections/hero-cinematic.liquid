@@ -1,0 +1,85 @@
+<section class="hero-cinematic-stage">
+  <div class="container" style="width: 100%;">
+    <div class="stage-top-meta">
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <span style="font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; color: var(--color-accent); font-weight: 700;">
+          AEROSPACE 6061-T6 FORGED
+        </span>
+        <span style="color: #444;">•</span>
+        <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--color-text-secondary);">
+          10,000-TON BILLET FORGE PRESS
+        </span>
+      </div>
+
+      <div class="construction-pills">
+        <span class="construction-pill active">1-PC MONOBLOCK</span>
+        <span class="construction-pill">2-PC MODULAR</span>
+        <span class="construction-pill">3-PC CUSTOM</span>
+      </div>
+    </div>
+
+    <div class="stage-headline-block">
+      <h1 class="heading-display">FORGED TO ORDER.</h1>
+      <p>
+        Precision 6061-T6 monoblock, 2-piece modular, and 3-piece custom forged wheels tailored to your exact chassis. Zero spacers. Millimeter-flush brake caliper clearance.
+      </p>
+
+      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+        <button class="btn-primary" data-action="open-ai-garage">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="17 8 12 3 7 8"></polyline>
+            <line x1="12" y1="3" x2="12" y2="15"></line>
+          </svg>
+          <span>UPLOAD YOUR CAR (AI GARAGE)</span>
+        </button>
+        <a href="#collection" class="btn-secondary">
+          <span>EXPLORE ALL 10 DESIGNS</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Wide-Angle Cinematic Before/After Stage -->
+    <div class="stage-slider-hero">
+      <div class="split-slider-container" id="hero-slider" style="aspect-ratio: 16 / 9; max-height: 540px;">
+        <div class="split-layer before">
+          <img src="{{ 'ferrari-812-before.jpg' | asset_url }}" alt="Ferrari 812 GTS OEM Factory Setup with Bronze Wheels" />
+        </div>
+        <div class="split-layer after">
+          <img src="{{ 'ferrari-812-after.jpg' | asset_url }}" alt="Ferrari 812 GTS with AGNI AF-04 Modular Forged Wheels in Mirror Brushed Silver (AI Render)" />
+        </div>
+        <div class="split-divider">
+          <div class="split-handle">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left: -6px;"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </div>
+        </div>
+        <div class="split-badge badge-left">FACTORY OEM SPEC • BRONZE</div>
+        <div class="split-badge badge-right">AGNI AF-04 • MIRROR SILVER (AI RENDER)</div>
+      </div>
+
+      <div style="padding: 0.85rem 1.5rem; background: var(--color-surface-elevated); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+        <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--color-text-secondary);">
+          CHASSIS: <strong style="color: #fff;">PORSCHE 911 GT3 (992)</strong> • 20x9.5J ET46 FRONT / 21x12.0J ET45 REAR
+        </div>
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <span class="badge-verified">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>VERIFIED FITMENT</span>
+          </span>
+          <button class="btn-card-visualize" data-action="open-ai-garage" data-wheel-code="AF-01">
+            <span>CHANGE WHEEL ON CAR</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero Cinematic",
+  "settings": []
+}
+{% endschema %}

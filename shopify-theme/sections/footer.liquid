@@ -1,0 +1,73 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="/" class="brand-logo" style="margin-bottom: 1rem;">
+          <span class="brand-logo-mark"></span>
+          <span>AGNI FORGED</span>
+        </a>
+        <p style="font-size: 0.85rem; line-height: 1.6; max-width: 320px; margin-bottom: 1.5rem;">
+          Precision forged aerospace 6061-T6 monoblock and modular wheels for motorsport and high-performance exotics. Hand-engineered to order.
+        </p>
+        <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--color-accent);">
+          FACTORY & METROLOGY LAB • AIR FREIGHT WORLDWIDE
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>WHEEL ARCHIVE</h4>
+        <ul class="footer-links">
+          <li><a href="#collection">AF-01 Twin 5-Spoke</a></li>
+          <li><a href="#collection">AF-02 Slotted Directional</a></li>
+          <li><a href="#collection">AF-03 Motorsport Y-Spoke</a></li>
+          <li><a href="#collection">AF-04 Multi-Spoke GT</a></li>
+          <li><a href="#collection">AF-05 Aero Track Monoblock</a></li>
+          <li><a href="#collection">Bespoke Centerlock Configs</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>ENGINEERING & TOOLS</h4>
+        <ul class="footer-links">
+          <li><a href="#ai-garage" data-action="open-ai-garage">AI Garage Visualiser</a></li>
+          <li><a href="#fitment">Chassis Fitment Database</a></li>
+          <li><a href="#engineering">6061-T6 Metallurgy Standards</a></li>
+          <li><a href="#engineering">FEA Stress Analysis Reports</a></li>
+          <li><a href="#engineering">TÜV / JWL Certification</a></li>
+          <li><a href="#contact">Dealer & Race Team Enquiries</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>PRODUCTION NOTIFICATIONS</h4>
+        <p style="font-size: 0.8rem; margin-bottom: 1rem;">
+          Subscribe for private billet batch releases and technical CAD spec sheets.
+        </p>
+        <form onsubmit="event.preventDefault(); alert('Subscribed to AGNI Engineering dispatch.');" style="display: flex; gap: 0.5rem;">
+          <input type="email" placeholder="CHASSIS@DOMAIN.COM" required style="flex-grow: 1; background: #111216; border: 1px solid var(--color-surface-border); border-radius: 4px; padding: 0.6rem 0.75rem; color: #fff; font-family: var(--font-mono); font-size: 0.75rem;" />
+          <button type="submit" class="btn-primary" style="padding: 0.6rem 1rem; font-size: 0.75rem;">JOIN</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>
+        © {{ 'now' | date: "%Y" }} AGNI FORGED WHEELS INC. ALL RIGHTS RESERVED.
+      </div>
+      <div style="color: var(--color-text-muted);">
+        Visual preview only. Final fitment subject to verification by AGNI Engineering before forging.
+      </div>
+      <div>
+        <span>EN / USD ($)</span> | <span>GLOBAL FREIGHT</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": []
+}
+{% endschema %}
+

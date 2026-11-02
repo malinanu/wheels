@@ -1,0 +1,38 @@
+{
+  "name": "Homepage",
+  "sections": {
+    "hero": {
+      "type": "hero-cinematic",
+      "settings": {}
+    },
+    "ticker": {
+      "type": "trust-ticker",
+      "settings": {}
+    },
+    "collection": {
+      "type": "collection-archive",
+      "settings": {}
+    },
+    "engineering": {
+      "type": "engineering-specs",
+      "settings": {}
+    },
+    "fitment": {
+      "type": "fitment-finder",
+      "settings": {}
+    },
+    "gallery": {
+      "type": "track-gallery",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "ticker",
+    "collection",
+    "engineering",
+    "fitment",
+    "gallery"
+  ]
+}
+
